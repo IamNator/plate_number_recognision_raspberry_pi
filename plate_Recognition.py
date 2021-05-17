@@ -7,17 +7,11 @@ import matplotlib.pyplot as plt
 from matplotlib.patches import Rectangle
 from PIL import Image
 from io import BytesIO
+from config import CONFIG
 
 # Add your Computer Vision subscription key and endpoint to your environment variables.
-if 'COMPUTER_VISION_SUBSCRIPTION_KEY' in os.environ:
-    subscription_key = os.environ['COMPUTER_VISION_SUBSCRIPTION_KEY']
-else:
-    print("\nSet the COMPUTER_VISION_SUBSCRIPTION_KEY environment variable.\n**Restart your shell or IDE for changes to take effect.**")
-    sys.exit()
-
-if 'COMPUTER_VISION_ENDPOINT' in os.environ:
-    endpoint = os.environ['COMPUTER_VISION_ENDPOINT']
-
+subscription_key = CONFIG['COMPUTER_VISION_SUBSCRIPTION_KEY']
+endpoint = CONFIG['COMPUTER_VISION_ENDPOINT']
 ocr_url = endpoint + "vision/v3.1/ocr"
 
 # Read the image into a byte array
@@ -27,6 +21,7 @@ image_data = frame
 headers = {'Ocp-Apim-Subscription-Key': subscription_key, 'Content-Type': 'application/octet-stream'}
 # put the byte array into your post request
 response = requests.post(ocr_url, headers=headers, params=params, data = image_data)
+
 
 # Extract the word bounding boxes and text.
 line_infos = [region["lines"] for region in analysis["regions"]]
