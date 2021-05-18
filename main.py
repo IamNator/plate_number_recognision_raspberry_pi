@@ -1,6 +1,7 @@
-import plate_recognition
-import log_checks
-import interface
+import get_plate_number from plate_recognition
+import log_check from log_checks
+import move from interface
+import is_moving from interface
 
 
 
@@ -8,11 +9,11 @@ import interface
 
 i = 0
 while true:
-    if !interface.is_moving():
-        interface.move(false)
-        plate_number = interface.get_plate_number()
+    if !is_moving():
+        move(false)
+        plate_number = get_plate_number()
         packing_space_id = i % 4
         i = i+1
-        if !log_checks.log_check(plate_number, packing_space_id)
+        if !log_check(plate_number, packing_space_id)
             continue #repeat the process
-        interface.move(true)        
+        move(true)        
