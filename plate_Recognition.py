@@ -41,7 +41,7 @@ takepicture()
 
 # analysis = response.json()
 
-image_url = "https://upload.wikimedia.org/wikipedia/commons/a/a9/%D0%9D%D0%86%D0%93%D0%95%D0%A0%D0%86%D0%AF_%D0%9D%D0%9E%D0%9C%D0%95%D0%A0_2012.gif"
+image_url = "https://c8.alamy.com/comp/WW0AXF/cambara-do-sul-brazil-july-19-2019-car-license-plate-with-new-design-used-by-countries-from-mercosur-southern-common-market-at-cambara-do-sul-WW0AXF.jpg"
 
 headers = {'Ocp-Apim-Subscription-Key': subscription_key}
 params = {'language': 'unk', 'detectOrientation': 'true'}
