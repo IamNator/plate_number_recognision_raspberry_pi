@@ -55,7 +55,5 @@ for word_info in word_infos:
 print(plate_number)
 
 
-print(word_infos)
-
 
 
