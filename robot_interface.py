@@ -12,9 +12,9 @@ GPIO.setup(inputPIN, GPIO.IN)
 # returns the state of the robot, moving or not
 def is_moving():
     if GPIO.input(inputPIN) == GPIO.HIGH:
-        return true
+        return 1
 
-    return false
+    return 0
 
 
 # move take a boolean value, it signals if the robot can move or not
