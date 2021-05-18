@@ -1,9 +1,5 @@
 import RPi.GPIO as GPIO
-import time
-import sys
-import cv2
 from datetime import datetime
-import os
 
 outputPIN = 2
 inputPIN = 3
@@ -15,7 +11,7 @@ GPIO.setup(inputPIN, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
 
 # returns the state of the robot, moving or not
 def is_moving():
-    if GPIO.input(inputPIN) == GPIO.HIGH
+    if GPIO.input(inputPIN) == GPIO.HIGH:
         return true
 
     return false
@@ -23,7 +19,7 @@ def is_moving():
 
 # move take a boolean value, it signals if the robot can move or not
 def move(state):
-    if state
+    if state:
         start_motor
         return
     
