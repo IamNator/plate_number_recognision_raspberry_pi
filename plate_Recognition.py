@@ -14,7 +14,7 @@ from time import sleep
 # Add your Computer Vision subscription key and endpoint to your environment variables.
 subscription_key = CONFIG['COMPUTER_VISION_SUBSCRIPTION_KEY']
 endpoint = CONFIG['COMPUTER_VISION_ENDPOINT']
-ocr_url = endpoint + "vision/v3.1/ocr"
+ocr_url = endpoint + "/vision/v3.2/ocr?language=unk&detectOrientation=true&model-version=latest"
 
 # Read the image into a byte array
 camera = PiCamera()
