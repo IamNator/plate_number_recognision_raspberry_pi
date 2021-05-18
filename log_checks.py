@@ -3,7 +3,7 @@ from config import CONFIG
 from time import datatime
 
 # log_check(plate_number, packing_space_id, current_time)
-def log_check(plate_number, packing_space_id, current_time):
+def log_check(plate_number, packing_space_id ):
     mawaqif_url = CONFIG["MAWAQIF_UPLOAD_CHECKS"]
     # Set Content-Type to octet-stream
     headers = {'Content-Type': 'application/json'}
@@ -16,7 +16,9 @@ def log_check(plate_number, packing_space_id, current_time):
     
     response = requests.post(mawaqif_url, headers=headers, data = log)
     response.raise_for_status()
-    return response.json()
+    if response.status == 200:
+        return true
+    return false
 
 
 def is_empty(plate_number):
