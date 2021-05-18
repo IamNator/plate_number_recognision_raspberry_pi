@@ -28,25 +28,15 @@ def takepicture():
 
 
 takepicture()
-# image_path = "/home/pi/Desktop/image.jpg"
-# # Read the image into a byte array
-# image_data = open(image_path, "rb").read()
+image_path = "/home/pi/Desktop/image.jpg"
+# Read the image into a byte array
+image_data = open(image_path, "rb").read()
 
-# params = {'language': 'unk', 'detectOrientation': 'true'}
-# # Set Content-Type to octet-stream
-# headers = {'Ocp-Apim-Subscription-Key': subscription_key, 'Content-Type': 'application/octet-stream'}
-# # put the byte array into your post request
-# response = requests.post(ocr_url, headers=headers, params=params, data = image_data)
-# response.raise_for_status()
-
-# analysis = response.json()
-
-image_url = "https://c8.alamy.com/comp/WW0AXF/cambara-do-sul-brazil-july-19-2019-car-license-plate-with-new-design-used-by-countries-from-mercosur-southern-common-market-at-cambara-do-sul-WW0AXF.jpg"
-
-headers = {'Ocp-Apim-Subscription-Key': subscription_key}
 params = {'language': 'unk', 'detectOrientation': 'true'}
-data = {'url': image_url}
-response = requests.post(ocr_url, headers=headers, params=params, json=data)
+# Set Content-Type to octet-stream
+headers = {'Ocp-Apim-Subscription-Key': subscription_key, 'Content-Type': 'application/octet-stream'}
+# put the byte array into your post request
+response = requests.post(ocr_url, headers=headers, params=params, data = image_data)
 response.raise_for_status()
 
 analysis = response.json()
