@@ -16,15 +16,16 @@ subscription_key = CONFIG['COMPUTER_VISION_SUBSCRIPTION_KEY']
 endpoint = CONFIG['COMPUTER_VISION_ENDPOINT']
 ocr_url = endpoint + "/vision/v3.2/ocr?language=unk&detectOrientation=true&model-version=latest"
 
-# Read the image into a byte array
-camera = PiCamera()
 
-camera.start_preview()
-sleep(5)
-camera.capture('/home/pi/Desktop/image.jpg')
-camera.stop_preview()
+def takepicture():
+    camera = PiCamera()
+    camera.start_preview()
+    sleep(5)
+    camera.capture('/home/pi/Desktop/image.jpg')
+    camera.stop_preview()
 
 
+takepicture()
 image_path = "/home/pi/Desktop/image.jpg"
 # Read the image into a byte array
 image_data = open(image_path, "rb").read()
