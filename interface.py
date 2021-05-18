@@ -5,62 +5,36 @@ import cv2
 from datetime import datetime
 import os
 
-button = 2
+outputPIN = 2
+inputPIN = 3
 
-GPIO.setup(button,GPIO.IN)
+GPIO.setmode(GPIO.BOARD)
+GPIO.setup(outputPIN,GPIO.OUT)
+GPIO.setup(inputPIN, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
 
 
-plate_detected = False
+# returns the state of the robot, moving or not
+def is_moving():
+    if GPIO.input(inputPIN) == GPIO.HIGH
+        return true
 
-alpr = Alpr("eu", "/home/pi/openalpr/src/build/config/openalpr.conf", "/home/pi/openalpr/runtime_data")
+    return false
 
-alpr.set_top_n(20)
-alpr.set_default_region("md")
 
-reset = True
-
-while reset == True:
+# move take a boolean value, it signals if the robot can move or not
+def move(state):
+    if state
+        start_motor
+        return
     
-    time.sleep(2)
-    camera=cv2.VideoCapture(0)
-    
-    if not camera.isOpened():
-        main = False
-        print ("can't open the camera")
-        while GPIO.input(button) == True:
-            None
-    
-    else:
-        main = True
-        print("camera found")
-        time.sleep(2)
-            
-    while True:
-
-        ret, frame = camera.read()
-
-        results = frame
+    stop_motor
         
-        i = 0
-        for plate in results['results']:
-            i += 1
-            for candidate in plate['candidates']:
-                prefix = "-"
-                if candidate['matches_template']:
-                    prefix = "*"
 
-                plate_detected = True
-                break
+def start_motor:
+    GPIO.output(outputPIN, GPIO.HIGH)    
 
-        if plate_detected:
-            print('license plate \nno. is '+ candidate['plate'] )
-            plate_detected = False
-        else:
-            print('Plate not detected..')
-            
-    
-        if GPIO.input(button) == False:
-            camera.release()
-            break
+def stop_motor:
+    GPIO.output(outputPIN, GPIO.LOW)
+      
 
 
