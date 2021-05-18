@@ -4,9 +4,6 @@ from robot_interface import move
 from robot_interface import is_moving
 
 
-
-
-
 i = 0
 while true:
     if is_moving() == false:
