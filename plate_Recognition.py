@@ -8,6 +8,7 @@ from matplotlib.patches import Rectangle
 from PIL import Image
 from io import BytesIO
 from config import CONFIG
+from picamera import PiCamera
 
 # Add your Computer Vision subscription key and endpoint to your environment variables.
 subscription_key = CONFIG['COMPUTER_VISION_SUBSCRIPTION_KEY']
@@ -15,12 +16,17 @@ endpoint = CONFIG['COMPUTER_VISION_ENDPOINT']
 ocr_url = endpoint + "vision/v3.1/ocr"
 
 # Read the image into a byte array
-ret, frame = camera.read()
+camera = PiCamera()
+camera = 
+
+ret, frame = camera
 image_data = frame
+
+params = {'language': 'unk', 'detectOrientation': 'true'}
 # Set Content-Type to octet-stream
 headers = {'Ocp-Apim-Subscription-Key': subscription_key, 'Content-Type': 'application/octet-stream'}
 # put the byte array into your post request
-response = requests.post(ocr_url, headers=headers, params=params, data = image_data)
+analysis = requests.post(ocr_url, headers=headers, params=params, data = image_data)
 
 
 # Extract the word bounding boxes and text.
