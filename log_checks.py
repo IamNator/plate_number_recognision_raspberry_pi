@@ -12,7 +12,7 @@ def log_check(plate_number, packing_space_id ):
     "plate_number":plate_number,
     "packing_space_id": packing_space_id,
     "current_time": datetime.now()
-    "IsEmpty": is_empty(plate_number)}
+    "is_empty": is_empty(plate_number)}
     
     response = requests.post(mawaqif_url, headers=headers, data = log)
     response.raise_for_status()
@@ -22,6 +22,6 @@ def log_check(plate_number, packing_space_id ):
 
 
 def is_empty(plate_number):
-    if plate_number == "" 
+    if plate_number == "": 
         return true
     return false
