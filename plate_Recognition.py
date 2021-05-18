@@ -41,8 +41,7 @@ takepicture()
 
 # analysis = response.json()
 
-image_url = "https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/" + \
-    "Atomist_quote_from_Democritus.png/338px-Atomist_quote_from_Democritus.png"
+image_url = "https://upload.wikimedia.org/wikipedia/commons/a/a9/%D0%9D%D0%86%D0%93%D0%95%D0%A0%D0%86%D0%AF_%D0%9D%D0%9E%D0%9C%D0%95%D0%A0_2012.gif"
 
 headers = {'Ocp-Apim-Subscription-Key': subscription_key}
 params = {'language': 'unk', 'detectOrientation': 'true'}
