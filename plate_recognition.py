@@ -3,11 +3,6 @@
 import os
 import sys
 import requests
-# If you are using a Jupyter Notebook, uncomment the following line.
-# %matplotlib inline
-# import matplotlib.pyplot as plt
-# from matplotlib.patches import Rectangle
-# from PIL import Image
 from io import BytesIO
 from config import CONFIG
 from picamera import PiCamera
