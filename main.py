@@ -5,7 +5,7 @@ from robot_interface import is_moving
 
 
 i = 0
-while true:
+while 1:
     if is_moving() == false:
         move(false)
         plate_number = get_plate_number()
