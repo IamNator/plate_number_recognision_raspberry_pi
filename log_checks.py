@@ -11,7 +11,7 @@ def log_check(plate_number, packing_space_id ):
     log = {
     "plate_number":plate_number,
     "packing_space_id": packing_space_id,
-    "current_time": datetime.now()
+    "current_time": datetime.now(),
     "is_empty": is_empty(plate_number)}
     
     response = requests.post(mawaqif_url, headers=headers, data = log)
