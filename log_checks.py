@@ -1,6 +1,6 @@
 import requests
 from config import CONFIG
-from datetime import datatime
+from datetime import datetime
 
 # log_check(plate_number, packing_space_id, current_time)
 def log_check(plate_number, packing_space_id ):
