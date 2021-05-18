@@ -6,8 +6,8 @@ inputPIN = 3
 
 GPIO.setmode(GPIO.BCM)
 GPIO.setup(outputPIN,GPIO.OUT)
-GPIO.setup(inputPIN, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
-import get_plate_number 
+GPIO.setup(inputPIN, GPIO.IN)
+
 
 # returns the state of the robot, moving or not
 def is_moving():
