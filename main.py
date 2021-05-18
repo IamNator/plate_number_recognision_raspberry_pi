@@ -1,7 +1,7 @@
-from plate_recognition import get_plate_number 
+from plate_recognition import get_plate_number
 from log_checks import log_check 
 from robot_interface import move
-from robot_interface import is_moving 
+from robot_interface import is_moving
 
 
 
