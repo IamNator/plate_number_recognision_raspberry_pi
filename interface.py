@@ -4,7 +4,7 @@ from datetime import time
 outputPIN = 2
 inputPIN = 3
 
-GPIO.setmode(GPIO.BOARD)
+# GPIO.setmode(GPIO.BOARD)
 GPIO.setup(outputPIN,GPIO.OUT)
 GPIO.setup(inputPIN, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
 import get_plate_number 
