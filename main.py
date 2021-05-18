@@ -1,7 +1,7 @@
-import get_plate_number from plate_recognition
-import log_check from log_checks
-import move from interface
-import is_moving from interface
+from plate_recognition import get_plate_number 
+from log_checks import log_check 
+from interface import move
+from interface import is_moving 
 
 
 
