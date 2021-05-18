@@ -1,3 +1,5 @@
+#!/usr/bin/python3
+
 import os
 import sys
 import requests
@@ -26,15 +28,26 @@ def takepicture():
 
 
 takepicture()
-image_path = "/home/pi/Desktop/image.jpg"
-# Read the image into a byte array
-image_data = open(image_path, "rb").read()
+# image_path = "/home/pi/Desktop/image.jpg"
+# # Read the image into a byte array
+# image_data = open(image_path, "rb").read()
 
+# params = {'language': 'unk', 'detectOrientation': 'true'}
+# # Set Content-Type to octet-stream
+# headers = {'Ocp-Apim-Subscription-Key': subscription_key, 'Content-Type': 'application/octet-stream'}
+# # put the byte array into your post request
+# response = requests.post(ocr_url, headers=headers, params=params, data = image_data)
+# response.raise_for_status()
+
+# analysis = response.json()
+
+image_url = "https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/" + \
+    "Atomist_quote_from_Democritus.png/338px-Atomist_quote_from_Democritus.png"
+
+headers = {'Ocp-Apim-Subscription-Key': subscription_key}
 params = {'language': 'unk', 'detectOrientation': 'true'}
-# Set Content-Type to octet-stream
-headers = {'Ocp-Apim-Subscription-Key': subscription_key, 'Content-Type': 'application/octet-stream'}
-# put the byte array into your post request
-response = requests.post(ocr_url, headers=headers, params=params, data = image_data)
+data = {'url': image_url}
+response = requests.post(ocr_url, headers=headers, params=params, json=data)
 response.raise_for_status()
 
 analysis = response.json()
