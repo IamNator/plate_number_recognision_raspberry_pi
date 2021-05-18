@@ -48,6 +48,12 @@ for line in line_infos:
             word_infos.append(word_info)
 word_infos
 
+plate_number = ""
+for word_info in word_infos:
+    plate_number += word_info["text"]
+    
+print(plate_number)
+
 
 print(word_infos)
 
