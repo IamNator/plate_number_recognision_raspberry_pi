@@ -33,7 +33,10 @@ params = {'language': 'unk', 'detectOrientation': 'true'}
 # Set Content-Type to octet-stream
 headers = {'Ocp-Apim-Subscription-Key': subscription_key, 'Content-Type': 'application/octet-stream'}
 # put the byte array into your post request
-analysis = requests.post(ocr_url, headers=headers, params=params, data = image_data)
+response = requests.post(ocr_url, headers=headers, params=params, data = image_data)
+response.raise_for_status()
+
+analysis = response.json()
 
 
 # Extract the word bounding boxes and text.
