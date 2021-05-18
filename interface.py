@@ -1,5 +1,5 @@
 import RPi.GPIO as GPIO
-from datetime import datetime
+from datetime import time
 
 outputPIN = 2
 inputPIN = 3
