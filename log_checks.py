@@ -6,7 +6,7 @@ import json
 # import time
 
 def default(o):
-    if isinstance(o, (datetime.date, datetime)):
+    if isinstance(o, (datetime.date, datetime.all)):
         return o.isoformat()
 
 def is_empty(plate_number):
