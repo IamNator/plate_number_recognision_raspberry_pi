@@ -1,4 +1,4 @@
-from typing import Any
+from typing import Any, BinaryIO
 import requests
 from config import CONFIG
 import datetime 
@@ -29,17 +29,19 @@ def log_check(plate_number, packing_space_id ):
     checks_log["current_time"] = time_of_check
     checks_log["is_empty"] = isEmpty
     
-    jsonlog = Any
+    jsonbyte = Any
     try:
-        jsonStr = json.dumps(checks_log, indent=1, sort_keys=True, default=str)
-        # then covert json string to json object
-        jsonlog = json.loads(jsonStr)
-        print(jsonStr)
+        # jsonStr = json.dumps(checks_log, indent=1, sort_keys=True, default=str)
+        # # then covert json string to json object
+        # jsonformat = json.loads(jsonStr)
+        jsonlog = json.dumps(checks_log)
+        jsonbyte = json.encoder.JSONEncoder.encode(jsonlog)
+        # print(jsonStr)
     except Exception as er:
         print(er)
         return False
     
-    print(jsonlog)
+    # print(jsonlog)
 
     
     try:
