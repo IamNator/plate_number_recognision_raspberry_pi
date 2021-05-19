@@ -5,7 +5,7 @@ outputPIN = 3
 inputPIN = 5
 
 GPIO.setmode(GPIO.BCM)
-GPIO.setup(outputPIN,GPIO.OUT)
+GPIO.setup(outputPIN, GPIO.OUT)
 GPIO.setup(inputPIN, GPIO.IN)
 
 
