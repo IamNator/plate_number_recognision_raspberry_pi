@@ -34,7 +34,7 @@ def post_request(databytes):
         response = requests.post(ocr_url, headers=headers, params=params, data = databytes)
         response.raise_for_status()
     except requests.HTTPError as er:
-        print(er)
+        print("error occured!")
         return ""
     
     analysis = response.json()
