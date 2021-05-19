@@ -42,12 +42,14 @@ def log_check(plate_number, packing_space_id ):
 
     
     try:
+        print("sending check logs...")
         response = requests.post(mawaqif_url, headers=headers, data = jsonlog)
         response.raise_for_status()
     except Exception as er:
         print(er)
         print(response.json())
     else: 
+        print("done sending check logs...")
         if response.status_code is 201:                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      
             return True
         else: 
