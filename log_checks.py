@@ -3,6 +3,9 @@ import json
 from config import CONFIG
 from datetime import datetime
 
+def default(o):
+    if isinstance(o, (datetime.date, datetime.datetime)):
+        return o.isoformat()
 
 def is_empty(plate_number):
     if plate_number == "": 
@@ -18,7 +21,7 @@ def log_check(plate_number, packing_space_id ):
     log = {
     "plate_number": plate_number,
     "packing_space_id": packing_space_id,
-    "current_time": datetime.now(),
+    "current_time": default,
     "is_empty": is_empty(plate_number)}
     
     jsonlog = json.dumps(log)
