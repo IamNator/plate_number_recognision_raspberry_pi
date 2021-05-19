@@ -1,5 +1,6 @@
 import RPi.GPIO as GPIO
 from datetime import time
+from picamera import PiCamera
 
 outputPIN = 23
 inputPIN = 24
@@ -33,4 +34,9 @@ def stop_motor():
     GPIO.output(outputPIN, GPIO.LOW)
       
 
-
+# takes a picture
+def takepicture():
+    camera = PiCamera()
+    camera.start_preview()
+    camera.capture('/home/pi/Desktop/image.jpg')
+    camera.stop_preview()
