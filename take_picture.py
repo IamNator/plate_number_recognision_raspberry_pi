@@ -3,7 +3,7 @@ from picamera import PiCamera
 from time import sleep
 
 
-# takes a picture
+# takes a picture and stores in image_path
 def take_picture(image_path):
     try:
         camera = PiCamera()

@@ -9,7 +9,7 @@ from time import sleep
 from log_checks import log_check
 from take_picture import take_picture
 
-        
+# uploads a car images (image_date | byte array) to AZURE Car recognition Service and returns the json response
 def post_request(image_data):
         
     # Add your Computer Vision subscription key and endpoint to your environment variables.
@@ -30,13 +30,13 @@ def post_request(image_data):
     else:
         return response.json()
         
-        
+
 # image_path = take_picture("/home/pi/Desktop/image.jpeg")
 # image_data = open(image_path, "rb").read()
 # print(post_request(image_data))
 
 
-
+# extracts car image from image_path and returns the plate_number
 def get_plate_number(image_path):
    
     # Read the image into a byte array s
@@ -58,7 +58,3 @@ def get_plate_number(image_path):
         plate_number += word_info["text"]
         
     return plate_number
-
-
-
-print(get_plate_number("/home/pi/Desktop/image.jpeg"))
