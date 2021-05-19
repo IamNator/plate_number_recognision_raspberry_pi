@@ -15,3 +15,5 @@ def take_picture():
     camera.capture("~/Desktop/image.jpeg")
     camera.stop_preview()
     return True
+
+print(take_picture)
