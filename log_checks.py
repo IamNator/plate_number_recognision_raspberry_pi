@@ -1,12 +1,12 @@
 from typing import Any
 import requests
 from config import CONFIG
-from datetime import datetime
+import datetime 
 import json
 # import time
 
 def default(o):
-    if isinstance(o, (datetime.date, datetime.all)):
+    if isinstance(o, (datetime.date, datetime.datetime)):
         return o.isoformat()
 
 def is_empty(plate_number):
@@ -21,7 +21,7 @@ def log_check(plate_number, packing_space_id ):
     headers = {'Content-Type': 'application/json'}
     # put the byte array into your post request
     isEmpty = is_empty(plate_number)
-    time_of_check = default(datetime.now())
+    time_of_check = default(datetime.datetime.now())
     
     checks_log = {}
     checks_log["plate_number"] = plate_number
