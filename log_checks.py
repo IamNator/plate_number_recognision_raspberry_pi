@@ -20,7 +20,7 @@ def log_check(plate_number, packing_space_id ):
     headers = {'Content-Type': 'application/json'}
     # put the byte array into your post request
     isEmpty = is_empty(plate_number)
-    time_of_check = default
+    time_of_check = default(datetime.now())
     
     checks_log = {}
     checks_log["plate_number"] = plate_number
