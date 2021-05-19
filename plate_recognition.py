@@ -10,7 +10,7 @@ from log_checks import log_check
 from take_picture import take_picture
 
         
-def post_request(databytes):
+def post_request(image_data):
         
     # Add your Computer Vision subscription key and endpoint to your environment variables.
     subscription_key = CONFIG['COMPUTER_VISION_SUBSCRIPTION_KEY']
@@ -22,7 +22,7 @@ def post_request(databytes):
     headers = {'Ocp-Apim-Subscription-Key': subscription_key, 'Content-Type': 'application/octet-stream'}
     # put the byte array into your post request
     try:
-        response = requests.post(ocr_url, headers=headers, params=params, data = databytes)
+        response = requests.post(ocr_url, headers=headers, params=params, data = image_data)
         response.raise_for_status()
     except Exception as er:
         print(er)
@@ -30,8 +30,8 @@ def post_request(databytes):
     else:
         return response.status_code
         
-    
-image_data = open("/home/pi/Desktop/image.jpeg", "rb").read()
+image_path = take_picture("/home/pi/Desktop/image.jpeg")
+image_data = open(image_path, "rb").read()
 print(post_request(image_data))
 
 

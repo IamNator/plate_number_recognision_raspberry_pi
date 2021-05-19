@@ -15,4 +15,6 @@ def take_picture(image_path):
         camera.stop_preview()
     except Exception as er:
         print(er)
+    else:
+        return image_path
 
