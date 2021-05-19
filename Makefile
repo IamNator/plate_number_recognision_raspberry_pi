@@ -3,4 +3,5 @@ test_launcher:
 	sh launcher.sh
 
 set-launcher:
-	sudo echo launcher.sh >> here.txt #/etc/rc.local
+	chmod 755 launcher.sh
+	cat launcher.sh >> /etc/rc.local
