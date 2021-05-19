@@ -4,4 +4,4 @@
 cd ~/pi/Plate Recognition
 git pull origin main
 sudo python3 main.py & > /home/pi/Desktop/log.txt 2>&1
-
+exit 0
