@@ -27,35 +27,34 @@ def get_plate_number():
     take_picture()
     image_path = "/home/pi/Desktop/image.jpg"
     # Read the image into a byte array
-    image_data = open(image_path, "rb").read()
+    # image_data = open(image_path, "rb").read()
 
-    params = {'language': 'unk', 'detectOrientation': 'true'}
+    return {'language': 'unk', 'detectOrientation': 'true'} # params = {'language': 'unk', 'detectOrientation': 'true'}
     # Set Content-Type to octet-stream
-    headers = {'Ocp-Apim-Subscription-Key': subscription_key, 'Content-Type': 'application/octet-stream'}
+    # headers = {'Ocp-Apim-Subscription-Key': subscription_key, 'Content-Type': 'application/octet-stream'}
     # put the byte array into your post request
-    try:
-        response = requests.post(ocr_url, headers=headers, params=params, data = image_data)
-        response.raise_for_status()
-    except requests.HTTPError as er:
-        print(er) #should I also sys.exit(1) after this?
-        return ""
+    # try:
+    #     response = requests.post(ocr_url, headers=headers, params=params, data = image_data)
+    #     response.raise_for_status()
+    # except requests.HTTPError as er:
+    #     print(er) #should I also sys.exit(1) after this?
+    #     return ""
 
-    analysis = response.json()
-    # Extract the word bounding boxes and text.
-    line_infos = [region["lines"] for region in analysis["regions"]]
-    word_infos = []
-    for line in line_infos:
-        for word_metadata in line:
-            for word_info in word_metadata["words"]:
-                word_infos.append(word_info)
-    word_infos
+    # analysis = response.json()
+    # # Extract the word bounding boxes and text.
+    # line_infos = [region["lines"] for region in analysis["regions"]]
+    # word_infos = []
+    # for line in line_infos:
+    #     for word_metadata in line:
+    #         for word_info in word_metadata["words"]:
+    #             word_infos.append(word_info)
+    # word_infos
 
-    plate_number = ""
-    for word_info in word_infos:
-        plate_number += word_info["text"]
+    # plate_number = ""
+    # for word_info in word_infos:
+    #     plate_number += word_info["text"]
         
     return plate_number
 
 
 
-print(get_plate_number())
