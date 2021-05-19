@@ -3,10 +3,10 @@ import requests
 from config import CONFIG
 from datetime import datetime
 import json
-import time
+# import time
 
 def default(o):
-    if isinstance(o, (datetime.date, datetime.time)):
+    if isinstance(o, (datetime.date, datetime)):
         return o.isoformat()
 
 def is_empty(plate_number):
