@@ -18,13 +18,15 @@ def log_check(plate_number, packing_space_id ):
     # Set Content-Type to octet-stream
     headers = {'Content-Type': 'application/json'}
     # put the byte array into your post request
-    log = {
-    "plate_number": plate_number,
-    "packing_space_id": packing_space_id,
-    "current_time": default,
-    "is_empty": is_empty(plate_number)}
+    checks_log = {}
     
-    jsonlog = json.dumps(log)
+    checks_log["plate_number"] = plate_number
+    checks_log["packing_space_id"] = packing_space_id
+    checks_log["current_time"] = default
+    checks_log["is_empty"] = is_empty(plate_number)
+    
+
+    jsonlog = json.dumps(checks_log)
     
     try:
         response = requests.post(mawaqif_url, headers=headers, data = jsonlog)
