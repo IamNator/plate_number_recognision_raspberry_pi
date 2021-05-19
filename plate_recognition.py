@@ -43,22 +43,22 @@ def get_plate_number(image_path):
     image_data = open(image_path, "rb").read()
     analysis = post_request(image_data)
    
-    print(analysis)
-    # # Extract the word bounding boxes and text.
-    # line_infos = [region["lines"] for region in analysis["regions"]]
-    # word_infos = []
-    # for line in line_infos:
-    #     for word_metadata in line:
-    #         for word_info in word_metadata["words"]:
-    #             word_infos.append(word_info)
-    # word_infos
+    
+    # Extract the word bounding boxes and text.
+    line_infos = [region["lines"] for region in analysis["regions"]]
+    word_infos = []
+    for line in line_infos:
+        for word_metadata in line:
+            for word_info in word_metadata["words"]:
+                word_infos.append(word_info)
+    word_infos
 
-    # plate_number = ""
-    # for word_info in word_infos:
-    #     plate_number += word_info["text"]
+    plate_number = ""
+    for word_info in word_infos:
+        plate_number += word_info["text"]
         
-    # return plate_number
+    return plate_number
 
 
 
-get_plate_number("/home/pi/Desktop/image.jpeg")
+print(get_plate_number("/home/pi/Desktop/image.jpeg"))
