@@ -29,9 +29,9 @@ def write_bytesio_to_file(filename, bytesio):
 def get_plate_number():
     
    
-    my_stream = take_picture()
-    # Read the image into a byte array
-    image_data = my_stream.read()
+    # my_stream = take_picture()
+    # # Read the image into a byte array
+    # image_data = my_stream.read()
   
 
     params = {'language': 'unk', 'detectOrientation': 'true'}
@@ -39,7 +39,8 @@ def get_plate_number():
     headers = {'Ocp-Apim-Subscription-Key': subscription_key, 'Content-Type': 'application/octet-stream'}
     # put the byte array into your post request
     try:
-        response = requests.post(ocr_url, headers=headers, params=params, data = image_data)
+        # response = requests.post(ocr_url, headers=headers, params=params, data = image_data)
+         response = requests.post(ocr_url, headers=headers, params=params)
         response.raise_for_status()
     except requests.HTTPError as er:
         print(er)
