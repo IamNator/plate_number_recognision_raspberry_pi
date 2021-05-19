@@ -26,6 +26,7 @@ def post_request(databytes):
         response.raise_for_status()
     except Exception as er:
         print(er)
+        print(response.json())
     else:
         return response.status_code
         
