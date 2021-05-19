@@ -24,7 +24,7 @@ def log_check(plate_number, packing_space_id ):
         response.raise_for_status()
     except Exception as er:
         print(er)
-        print(response.status_code)
+        print(response.json)
     else: 
         if response.status_code is 201:
             return True
