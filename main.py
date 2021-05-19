@@ -7,7 +7,7 @@ from robot_interface import is_moving
 print("starting ...\n")
 i = 0
 while True:
-    if is_moving() == 0:
+    if not is_moving():
         print("plate recognition...\n")
         move(False)
         plate_number = plate_recognition.get_plate_number()
