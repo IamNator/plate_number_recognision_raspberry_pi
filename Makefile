@@ -4,4 +4,4 @@ test_launcher:
 
 set-launcher:
 	chmod 755 launcher.sh
-	sudo cat launcher.sh >> /etc/rc.local
+	cat launcher.sh >> /etc/rc.local
