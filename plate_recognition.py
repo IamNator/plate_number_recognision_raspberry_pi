@@ -8,7 +8,7 @@ from config import CONFIG
 from picamera import PiCamera
 from time import sleep
 from log_checks import log_check
-from robot_interface import take_picture
+
 
 # Add your Computer Vision subscription key and endpoint to your environment variables.
 subscription_key = CONFIG['COMPUTER_VISION_SUBSCRIPTION_KEY']
