@@ -26,7 +26,7 @@ def log_check(plate_number, packing_space_id ):
         print(er)
         print(response.json)
     else: 
-        if response.status_code is 201:
+        if response.status_code is 201:                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      
             return True
         else: 
             return False
