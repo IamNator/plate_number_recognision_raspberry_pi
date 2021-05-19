@@ -16,26 +16,22 @@ def post_request(databytes):
     subscription_key = CONFIG['COMPUTER_VISION_SUBSCRIPTION_KEY']
     endpoint = CONFIG['COMPUTER_VISION_ENDPOINT']
     ocr_url = endpoint + "/vision/v3.2/ocr?language=unk&detectOrientation=true&model-version=latest"
-    print(ocr_url)
-    
-    # params = {'language': 'unk', 'detectOrientation': 'true'}
-    # # Set Content-Type to octet-stream
-    # headers = {'Ocp-Apim-Subscription-Key': subscription_key, 'Content-Type': 'application/octet-stream'}
-    # # put the byte array into your post request
-    # try:
-    #     response = requests.post(ocr_url, headers=headers, params=params, data = databytes)
-    #     response.raise_for_status()
-    # except Exception as er:
-    #     print(er)
-    # else:
-    #     return response.status_code
+   
+    params = {'language': 'unk', 'detectOrientation': 'true'}
+    # Set Content-Type to octet-stream
+    headers = {'Ocp-Apim-Subscription-Key': subscription_key, 'Content-Type': 'application/octet-stream'}
+    # put the byte array into your post request
+    try:
+        response = requests.post(ocr_url, headers=headers, params=params, data = databytes)
+        response.raise_for_status()
+    except Exception as er:
+        print(er)
+    else:
+        return response.status_code
         
     
     
-      
-
-post_request(take_picture())
-# print(post_request(take_picture()))
+print(post_request(take_picture()))
 
 
 
