@@ -33,12 +33,13 @@ def get_plate_number():
     # Set Content-Type to octet-stream
     headers = {'Ocp-Apim-Subscription-Key': subscription_key, 'Content-Type': 'application/octet-stream'}
     # put the byte array into your post request
-    response = requests.post(ocr_url, headers=headers, params=params, data = image_data)
-    response.raise_for_status()
+    try:
+        response = requests.post(ocr_url, headers=headers, params=params, data = image_data)
+        response.raise_for_status()
+    except requests.HTTPError as er:
+        print(er) #should I also sys.exit(1) after this?
 
     analysis = response.json()
-
-
     # Extract the word bounding boxes and text.
     line_infos = [region["lines"] for region in analysis["regions"]]
     word_infos = []
