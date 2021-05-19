@@ -12,7 +12,7 @@ def take_picture():
     # warm up camera
     sleep(1)
     # camera.capture(my_stream, 'jpeg')
-    camera.capture("~/Desktop/image.jpeg")
+    camera.capture("/home/pi/Desktop/image.jpeg")
     camera.stop_preview()
     return True
 
