@@ -20,5 +20,5 @@ print("starting ...\n")
 #             continue #repeat the process
 #         move(True) 
 
-
-print(plate_recognition.get_plate_number())
+while True:
+    print(plate_recognition.get_plate_number())
