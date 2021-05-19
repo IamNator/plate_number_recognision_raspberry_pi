@@ -22,14 +22,15 @@ def get_plate_number():
     #     image_path = "/home/pi/Desktop/image.jpg"
         
     # take a picture
-    # my_stream = take_picture()
-    
+    my_stream = take_picture()
     # Read the image into a byte array
     # image_data = open(image_path, "rb").read()
-    # image_data = my_stream.read()
-    # my_stream.close()
+    image_data = my_stream.read()
+    my_stream.close()
+    
+    print(my_stream)
 
-    return {'language': 'unk', 'detectOrientation': 'true'} # params = {'language': 'unk', 'detectOrientation': 'true'}
+    # params = {'language': 'unk', 'detectOrientation': 'true'}
     # Set Content-Type to octet-stream
     # headers = {'Ocp-Apim-Subscription-Key': subscription_key, 'Content-Type': 'application/octet-stream'}
     # put the byte array into your post request
