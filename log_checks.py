@@ -1,3 +1,4 @@
+from typing import Any
 import requests
 import json
 from config import CONFIG
@@ -27,7 +28,14 @@ def log_check(plate_number, packing_space_id ):
     checks_log["current_time"] = time_of_check
     checks_log["is_empty"] = isEmpty
     
-    jsonlog = json.dumps(checks_log)
+    jsonlog = Any
+    
+    try:
+        jsonlog = json.dumps(checks_log)
+    except Exception as er:
+        print(er)
+
+
     
     try:
         response = requests.post(mawaqif_url, headers=headers, data = jsonlog)
