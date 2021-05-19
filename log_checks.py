@@ -1,8 +1,9 @@
 from typing import Any
 import requests
-import json
 from config import CONFIG
 from datetime import datetime
+from bson import json_util
+import json
 
 def default(o):
     if isinstance(o, (datetime.date, datetime.datetime)):
@@ -31,7 +32,7 @@ def log_check(plate_number, packing_space_id ):
     jsonlog = Any
     
     try:
-        jsonlog = json.dumps(checks_log)
+        jsonlog = json.dumps(checks_log, default=json_util.default)
     except Exception as er:
         print(er)
         return False
