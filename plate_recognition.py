@@ -24,29 +24,34 @@ def write_bytesio_to_file(filename, bytesio):
     with open(filename, "wb") as outfile:
         # Copy the BytesIO stream to the output file
         outfile.write(bytesio.getbuffer())
-
-
-def get_plate_number():
-    
-   
-    # my_stream = take_picture()
-    # # Read the image into a byte array
-    # image_data = my_stream.read()
-  
-
+        
+def post_request(databytes):
     params = {'language': 'unk', 'detectOrientation': 'true'}
     # Set Content-Type to octet-stream
     headers = {'Ocp-Apim-Subscription-Key': subscription_key, 'Content-Type': 'application/octet-stream'}
     # put the byte array into your post request
     try:
-        # response = requests.post(ocr_url, headers=headers, params=params, data = image_data)
-        response = requests.post(ocr_url, headers=headers, params=params)
+        response = requests.post(ocr_url, headers=headers, params=params, data = databytes)
         response.raise_for_status()
     except requests.HTTPError as er:
         print(er)
         return ""
     
     analysis = response.json()
+    return analysis
+
+
+post_request(bytearray("dsda"))
+
+
+
+def get_plate_number(bytesio):
+   
+    # Read the image into a byte array
+    image_data = bytesio.read()
+    
+    analysis = post_request()
+   
     print(analysis)
     # # Extract the word bounding boxes and text.
     # line_infos = [region["lines"] for region in analysis["regions"]]
