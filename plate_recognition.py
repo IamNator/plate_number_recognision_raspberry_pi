@@ -31,9 +31,10 @@ def post_request():
        response = requests.get('http://www.google.com')
     except requests.ConnectionError as er:
         print(er)
-        
-    analysis = response.json()
-    return analysis
+        return 
+    else:
+        analysis = response.json()
+        return analysis
 
 
 post_request()
