@@ -18,14 +18,15 @@ def log_check(plate_number, packing_space_id ):
     # Set Content-Type to octet-stream
     headers = {'Content-Type': 'application/json'}
     # put the byte array into your post request
-    checks_log = {}
+    isEmpty = is_empty(plate_number)
+    time_of_check = default
     
+    checks_log = {}
     checks_log["plate_number"] = plate_number
     checks_log["packing_space_id"] = packing_space_id
-    checks_log["current_time"] = default
-    checks_log["is_empty"] = is_empty(plate_number)
+    checks_log["current_time"] = time_of_check
+    checks_log["is_empty"] = isEmpty
     
-
     jsonlog = json.dumps(checks_log)
     
     try:
