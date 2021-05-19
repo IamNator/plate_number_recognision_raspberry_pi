@@ -30,7 +30,6 @@ def log_check(plate_number, packing_space_id ):
     checks_log["is_empty"] = isEmpty
     
     jsonlog = Any
-    
     try:
         jsonStr = json.dumps(checks_log, indent=1, sort_keys=True, default=str)
         # then covert json string to json object
@@ -39,6 +38,8 @@ def log_check(plate_number, packing_space_id ):
     except Exception as er:
         print(er)
         return False
+    
+    print(jsonlog)
 
     
     try:
