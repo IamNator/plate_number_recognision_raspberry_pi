@@ -22,5 +22,8 @@ i = 0
 
 while True:
     move(True)
+    print("move..")
     time.sleep(3)
     move(False)
+    time.sleep(3)
+    print("stop...")
