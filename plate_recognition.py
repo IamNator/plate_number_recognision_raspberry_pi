@@ -38,6 +38,7 @@ def get_plate_number():
         response.raise_for_status()
     except requests.HTTPError as er:
         print(er) #should I also sys.exit(1) after this?
+        return ""
 
     analysis = response.json()
     # Extract the word bounding boxes and text.
@@ -57,4 +58,4 @@ def get_plate_number():
 
 
 
-
+print(get_plate_number())
