@@ -9,23 +9,14 @@ from time import sleep
 from log_checks import log_check
 from take_picture import take_picture
 
-# Add your Computer Vision subscription key and endpoint to your environment variables.
-subscription_key = CONFIG['COMPUTER_VISION_SUBSCRIPTION_KEY']
-endpoint = CONFIG['COMPUTER_VISION_ENDPOINT']
-ocr_url = endpoint + "/vision/v3.2/ocr?language=unk&detectOrientation=true&model-version=latest"
-
-
-def write_bytesio_to_file(filename, bytesio):
-    """
-    Write the contents of the given BytesIO to a file.
-    Creates the file or overwrites the file if it does
-    not exist yet. 
-    """
-    with open(filename, "wb") as outfile:
-        # Copy the BytesIO stream to the output file
-        outfile.write(bytesio.getbuffer())
         
 def post_request(databytes):
+        
+    # Add your Computer Vision subscription key and endpoint to your environment variables.
+    subscription_key = CONFIG['COMPUTER_VISION_SUBSCRIPTION_KEY']
+    endpoint = CONFIG['COMPUTER_VISION_ENDPOINT']
+    ocr_url = endpoint + "/vision/v3.2/ocr?language=unk&detectOrientation=true&model-version=latest"
+
     params = {'language': 'unk', 'detectOrientation': 'true'}
     # Set Content-Type to octet-stream
     headers = {'Ocp-Apim-Subscription-Key': subscription_key, 'Content-Type': 'application/octet-stream'}
