@@ -66,5 +66,3 @@ def get_plate_number(bytesio):
 
 
 
-get_plate_number()
-
