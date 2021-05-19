@@ -32,7 +32,7 @@ def post_request(databytes):
         
     
     
-print(post_request(take_picture().read()))
+print(post_request(take_picture())
 
 
 
