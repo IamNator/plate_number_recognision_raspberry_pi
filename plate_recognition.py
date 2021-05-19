@@ -33,14 +33,14 @@ def post_request():
     except requests.exceptions as er:
         print(er)
     else:
-        analysis = response.json()
+        analysis = response.status_code
         return analysis
     
     
       
 
 
-post_request()
+print(post_request())
 
 
 
