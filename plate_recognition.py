@@ -22,12 +22,12 @@ def get_plate_number():
     #     image_path = "/home/pi/Desktop/image.jpg"
         
     # take a picture
-    my_stream = take_picture()
+    # my_stream = take_picture()
     
     # Read the image into a byte array
     # image_data = open(image_path, "rb").read()
-    image_data = my_stream.read()
-    my_stream.close()
+    # image_data = my_stream.read()
+    # my_stream.close()
 
     return {'language': 'unk', 'detectOrientation': 'true'} # params = {'language': 'unk', 'detectOrientation': 'true'}
     # Set Content-Type to octet-stream
@@ -54,7 +54,7 @@ def get_plate_number():
     # for word_info in word_infos:
     #     plate_number += word_info["text"]
         
-    return plate_number
+    # return plate_number
 
 
 
