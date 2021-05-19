@@ -4,7 +4,7 @@ from datetime import time
 outputPIN = 23
 inputPIN = 24
 
-GPIO.setwarning(False)
+GPIO.setwarnings(False)
 GPIO.setmode(GPIO.BCM)
 GPIO.setup(outputPIN, GPIO.OUT)
 GPIO.setup(inputPIN, GPIO.IN)
