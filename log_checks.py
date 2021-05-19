@@ -1,4 +1,5 @@
 import requests
+import json
 from config import CONFIG
 from datetime import datetime
 
@@ -15,12 +16,15 @@ def log_check(plate_number, packing_space_id ):
     headers = {'Content-Type': 'application/json'}
     # put the byte array into your post request
     log = {
-    "plate_number":plate_number,
+    "plate_number": plate_number,
     "packing_space_id": packing_space_id,
     "current_time": datetime.now(),
     "is_empty": is_empty(plate_number)}
+    
+    jsonlog = json.dumps(log)
+    
     try:
-        response = requests.post(mawaqif_url, headers=headers, data = log)
+        response = requests.post(mawaqif_url, headers=headers, data = jsonlog)
         response.raise_for_status()
     except Exception as er:
         print(er)
