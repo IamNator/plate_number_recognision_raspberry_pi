@@ -34,6 +34,7 @@ def log_check(plate_number, packing_space_id ):
         jsonStr = json.dumps(checks_log, indent=1, sort_keys=True, default=str)
         # then covert json string to json object
         jsonlog = json.loads(jsonStr)
+        print(jsonStr)
     except Exception as er:
         print(er)
         return False
