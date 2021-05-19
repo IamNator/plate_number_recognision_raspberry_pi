@@ -30,11 +30,12 @@ def post_request():
     
     try:
         response = requests.get('http://www.google.com')
+    except requests.exceptions as er:
+        print(er)
+    else:
         analysis = response.json()
         return analysis
-    except requests.ConnectionError as er:
-        print(er)
-        return 
+    
     
       
 
