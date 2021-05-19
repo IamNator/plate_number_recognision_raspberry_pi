@@ -10,37 +10,31 @@ from log_checks import log_check
 from take_picture import take_picture
 
         
-def post_request():
+def post_request(databytes):
         
-    # # Add your Computer Vision subscription key and endpoint to your environment variables.
-    # subscription_key = CONFIG['COMPUTER_VISION_SUBSCRIPTION_KEY']
-    # endpoint = CONFIG['COMPUTER_VISION_ENDPOINT']
-    # ocr_url = endpoint + "/vision/v3.2/ocr?language=unk&detectOrientation=true&model-version=latest"
+    # Add your Computer Vision subscription key and endpoint to your environment variables.
+    subscription_key = CONFIG['COMPUTER_VISION_SUBSCRIPTION_KEY']
+    endpoint = CONFIG['COMPUTER_VISION_ENDPOINT']
+    ocr_url = endpoint + "/vision/v3.2/ocr?language=unk&detectOrientation=true&model-version=latest"
 
-    # params = {'language': 'unk', 'detectOrientation': 'true'}
-    # # Set Content-Type to octet-stream
-    # headers = {'Ocp-Apim-Subscription-Key': subscription_key, 'Content-Type': 'application/octet-stream'}
-    # # put the byte array into your post request
-    # try:
-    #     response = requests.post(ocr_url, headers=headers, params=params, data = databytes)
-    #     response.raise_for_status()
-    # except requests.HTTPError as er:
-    #     print("error occured!")
-    #     return ""
-    
+    params = {'language': 'unk', 'detectOrientation': 'true'}
+    # Set Content-Type to octet-stream
+    headers = {'Ocp-Apim-Subscription-Key': subscription_key, 'Content-Type': 'application/octet-stream'}
+    # put the byte array into your post request
     try:
-        response = requests.get('http://www.google.com')
-    except requests.exceptions as er:
-        print(er)
+        response = requests.post(ocr_url, headers=headers, params=params, data = databytes)
+        response.raise_for_status()
+    except requests.HTTPError as er:
+        print("error occured!")
     else:
-        analysis = response.status_code
-        return analysis
+        return response.status_code
+        
     
     
       
 
 
-print(post_request())
+print(post_request(take_picture()))
 
 
 
