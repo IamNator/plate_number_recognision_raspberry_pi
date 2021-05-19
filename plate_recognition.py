@@ -39,7 +39,7 @@ def post_request(image_data):
 
 def get_plate_number(image_path):
    
-    # Read the image into a byte array
+    # Read the image into a byte array s
     image_data = open(image_path, "rb").read()
     analysis = post_request(image_data)
    
