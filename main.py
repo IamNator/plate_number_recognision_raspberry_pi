@@ -1,5 +1,5 @@
 #! /usr/bin/env python
-
+from typing import Any
 import plate_recognition as plate_recognition
 import log_checks 
 import time
@@ -15,7 +15,11 @@ while True:
     if not is_moving():
         print("plate recognition...\n")
         move(False)
-        plate_number = plate_recognition.get_plate_number(image_path)
+        plate_number = Any
+        try:
+            plate_number = plate_recognition.get_plate_number(image_path)
+        except Exception as err:
+            continue
         i = i+1
         packing_space_id = i % 5
         if packing_space_id == 0:
