@@ -25,8 +25,8 @@ def get_plate_number():
     my_stream = take_picture()
     # Read the image into a byte array
     # image_data = open(image_path, "rb").read()
-    image_data = my_stream.read()
-    my_stream.close()
+    # image_data = my_stream.read()
+    # my_stream.close()
     
     print(my_stream)
 
