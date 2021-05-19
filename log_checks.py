@@ -1,4 +1,3 @@
-from typing import Any, BinaryIO
 import requests
 from config import CONFIG
 import datetime 
