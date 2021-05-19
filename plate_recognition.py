@@ -5,22 +5,14 @@ import sys
 import requests
 from io import BytesIO
 from config import CONFIG
-from picamera import PiCamera
 from time import sleep
 from log_checks import log_check
-
+from take_picture import take_picture
 
 # Add your Computer Vision subscription key and endpoint to your environment variables.
 subscription_key = CONFIG['COMPUTER_VISION_SUBSCRIPTION_KEY']
 endpoint = CONFIG['COMPUTER_VISION_ENDPOINT']
 ocr_url = endpoint + "/vision/v3.2/ocr?language=unk&detectOrientation=true&model-version=latest"
-
-# takes a picture
-def take_picture(image_path):
-    camera = PiCamera()
-    camera.start_preview()
-    camera.capture(image_path)
-    camera.stop_preview()
 
 
 def get_plate_number(image_path):
@@ -30,7 +22,7 @@ def get_plate_number(image_path):
         image_path = "/home/pi/Desktop/image.jpg"
         
     # take a picture
-    take_picture(image_path)
+    take_picture.take_picture(image_path)
     
     # Read the image into a byte array
     # image_data = open(image_path, "rb").read()
