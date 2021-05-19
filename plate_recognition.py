@@ -28,20 +28,20 @@ def post_request(image_data):
         print(er)
         print(response.json())
     else:
-        return response.status_code
+        return response.json()
         
-image_path = take_picture("/home/pi/Desktop/image.jpeg")
-image_data = open(image_path, "rb").read()
-print(post_request(image_data))
+        
+# image_path = take_picture("/home/pi/Desktop/image.jpeg")
+# image_data = open(image_path, "rb").read()
+# print(post_request(image_data))
 
 
 
-def get_plate_number(bytesio):
+def get_plate_number(image_path):
    
     # Read the image into a byte array
-    image_data = bytesio.read()
-    
-    analysis = post_request()
+    image_data = open(image_path, "rb").read()
+    analysis = post_request(image_data)
    
     print(analysis)
     # # Extract the word bounding boxes and text.
@@ -61,3 +61,4 @@ def get_plate_number(bytesio):
 
 
 
+get_plate_number("/home/pi/Desktop/image.jpeg")
