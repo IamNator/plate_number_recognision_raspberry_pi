@@ -5,7 +5,7 @@ outputPIN = 16 #GPIO 23
 inputPIN = 18 #GPIO 24
 
 # GPIO.setwarnings(False)
-GPIO.setmode(GPIO.BCM)
+GPIO.setmode(GPIO.BOARD)
 GPIO.setup(outputPIN, GPIO.OUT)
 GPIO.setup(inputPIN, GPIO.IN)
 
