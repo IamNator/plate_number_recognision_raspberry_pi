@@ -15,5 +15,3 @@ def take_picture():
     # camera.capture("/home/pi/Desktop/image.jpeg")
     camera.stop_preview()
     return my_stream
-
-print(len(take_picture().read()))
