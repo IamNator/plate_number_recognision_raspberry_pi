@@ -7,10 +7,10 @@ from robot_interface import is_moving
 i = 0
 while 1:
     if is_moving() == 0:
-        move(0)
+        move(False)
         plate_number = get_plate_number()
         packing_space_id = i % 4
         i = i+1
-        if log_check(plate_number, packing_space_id) == 0:
+        if not log_check(plate_number, packing_space_id):
             continue #repeat the process
-        move(1)        
+        move(True)        

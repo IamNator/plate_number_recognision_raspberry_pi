@@ -17,11 +17,11 @@ def log_check(plate_number, packing_space_id ):
     response = requests.post(mawaqif_url, headers=headers, data = log)
     response.raise_for_status()
     if response.status == 200:
-        return 1
-    return 0
+        return True
+    return False
 
 
 def is_empty(plate_number):
     if plate_number == "": 
-        return 1
-    return 0
+        return True
+    return False
