@@ -25,10 +25,9 @@ def get_plate_number():
     my_stream = take_picture()
     # Read the image into a byte array
     # image_data = open(image_path, "rb").read()
-    image_data = my_stream.read()
-    my_stream.close()
-    
-    print(len(image_data))
+    write_bytesio_to_file("/home/pi/Desktop/image.jpeg", my_stream)
+   
+    print("done")
 
     # params = {'language': 'unk', 'detectOrientation': 'true'}
     # Set Content-Type to octet-stream
@@ -60,3 +59,14 @@ def get_plate_number():
 
 
 get_plate_number()
+
+
+def write_bytesio_to_file(filename, bytesio):
+    """
+    Write the contents of the given BytesIO to a file.
+    Creates the file or overwrites the file if it does
+    not exist yet. 
+    """
+    with open(filename, "wb") as outfile:
+        # Copy the BytesIO stream to the output file
+        outfile.write(bytesio.getbuffer())
