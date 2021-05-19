@@ -16,16 +16,22 @@ endpoint = CONFIG['COMPUTER_VISION_ENDPOINT']
 ocr_url = endpoint + "/vision/v3.2/ocr?language=unk&detectOrientation=true&model-version=latest"
 
 # takes a picture
-def take_picture():
+def take_picture(image_path):
     camera = PiCamera()
     camera.start_preview()
-    camera.capture('/home/pi/Desktop/image.jpg')
+    camera.capture(image_path)
     camera.stop_preview()
 
 
-def get_plate_number():
-    take_picture()
-    image_path = "/home/pi/Desktop/image.jpg"
+def get_plate_number(image_path):
+    
+    # set  "/home/pi/Desktop/image.jpg" as default image path
+    if image_path == "" :
+        image_path = "/home/pi/Desktop/image.jpg"
+        
+    # take a picture
+    take_picture(image_path)
+    
     # Read the image into a byte array
     # image_data = open(image_path, "rb").read()
 
