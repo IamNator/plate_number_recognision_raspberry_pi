@@ -1,6 +1,5 @@
 #! /usr/bin/env python
 from config import CONFIG
-from typing import Any
 import plate_recognition as plate_recognition
 import log_checks 
 import time
@@ -17,7 +16,7 @@ while True:
     if not is_moving():
         print("plate recognition...\n")
         move(False)
-        plate_number = Any
+        plate_number = ""
         try:
             plate_number = plate_recognition.get_plate_number(image_path)
         except Exception as err:
