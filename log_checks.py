@@ -2,8 +2,11 @@ from typing import Any
 import requests
 from config import CONFIG
 from datetime import datetime
-from django.core.serializers.json import DjangoJSONEncoder
 import json
+
+def default(o):
+    if isinstance(o, (datetime.date, datetime.datetime)):
+        return o.isoformat()
 
 def is_empty(plate_number):
     if plate_number == "": 
@@ -17,8 +20,7 @@ def log_check(plate_number, packing_space_id ):
     headers = {'Content-Type': 'application/json'}
     # put the byte array into your post request
     isEmpty = is_empty(plate_number)
-    time_of_check = DjangoJSONEncoder
-    
+    time_of_check = default
     
     checks_log = {}
     checks_log["plate_number"] = plate_number
@@ -29,7 +31,9 @@ def log_check(plate_number, packing_space_id ):
     jsonlog = Any
     
     try:
-        jsonlog = json.dumps(checks_log, default=json_util.default)
+        jsonStr = json.dumps(checks_log, indent=1, sort_keys=True, default=str)
+        # then covert json string to json object
+        jsonlog = json.loads(jsonStr)
     except Exception as er:
         print(er)
         return False
