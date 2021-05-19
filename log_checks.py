@@ -35,7 +35,7 @@ def log_check(plate_number, packing_space_id ):
         # # then covert json string to json object
         # jsonformat = json.loads(jsonStr)
         jsonlog = json.dumps(checks_log)
-        jsonbyte = json.encoder.JSONEncoder.encode(jsonlog)
+        jsonbyte = jsonlog #json.encoder.JSONEncoder.encode(jsonlog)
         print(jsonbyte)
     except Exception as er:
         print(er)
