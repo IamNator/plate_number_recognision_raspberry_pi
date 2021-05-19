@@ -23,7 +23,7 @@ i = 0
 while True:
     move(True)
     print("move..")
-    time.sleep(3)
+    time.sleep(1)
     move(False)
-    time.sleep(3)
+    time.sleep(1)
     print("stop...")
