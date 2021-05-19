@@ -36,7 +36,7 @@ def log_check(plate_number, packing_space_id ):
         # jsonformat = json.loads(jsonStr)
         jsonlog = json.dumps(checks_log)
         jsonbyte = json.encoder.JSONEncoder.encode(jsonlog)
-        # print(jsonStr)
+        print(jsonbyte)
     except Exception as er:
         print(er)
         return False
@@ -46,7 +46,7 @@ def log_check(plate_number, packing_space_id ):
     
     try:
         print("sending check logs...")
-        response = requests.post(mawaqif_url, headers=headers, data = jsonlog)
+        response = requests.post(mawaqif_url, headers=headers, data = jsonbyte)
         response.raise_for_status()
     except Exception as er:
         print(er)
