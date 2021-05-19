@@ -4,13 +4,17 @@ from robot_interface import move
 from robot_interface import is_moving
 
 
+print("starting ...\n")
 i = 0
 while True:
+    print("moving\n")
     if is_moving() == 0:
+        print("plate recognition...\n")
         move(False)
         plate_number = get_plate_number()
         packing_space_id = i % 4
         i = i+1
         if not log_check(plate_number, packing_space_id):
             continue #repeat the process
-        move(True)        
+        move(True) 
+    
