@@ -8,6 +8,7 @@ from config import CONFIG
 from picamera import PiCamera
 from time import sleep
 from log_checks import log_check
+from robot_interface import take_picture
 
 # Add your Computer Vision subscription key and endpoint to your environment variables.
 subscription_key = CONFIG['COMPUTER_VISION_SUBSCRIPTION_KEY']
@@ -15,7 +16,7 @@ endpoint = CONFIG['COMPUTER_VISION_ENDPOINT']
 ocr_url = endpoint + "/vision/v3.2/ocr?language=unk&detectOrientation=true&model-version=latest"
 
 # takes a picture
-def takepicture():
+def take_picture():
     camera = PiCamera()
     camera.start_preview()
     camera.capture('/home/pi/Desktop/image.jpg')
@@ -23,7 +24,7 @@ def takepicture():
 
 
 def get_plate_number():
-    takepicture()
+    take_picture()
     image_path = "/home/pi/Desktop/image.jpg"
     # Read the image into a byte array
     image_data = open(image_path, "rb").read()
