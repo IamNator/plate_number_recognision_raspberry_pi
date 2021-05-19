@@ -22,10 +22,12 @@ def get_plate_number(image_path):
         image_path = "/home/pi/Desktop/image.jpg"
         
     # take a picture
-    take_picture.take_picture(image_path)
+    my_stream = take_picture.take_picture(image_path)
     
     # Read the image into a byte array
     # image_data = open(image_path, "rb").read()
+    image_data = my_stream.read()
+    my_stream.close()
 
     return {'language': 'unk', 'detectOrientation': 'true'} # params = {'language': 'unk', 'detectOrientation': 'true'}
     # Set Content-Type to octet-stream

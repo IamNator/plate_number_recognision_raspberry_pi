@@ -4,7 +4,7 @@ from time import sleep
 
 
 # takes a picture
-def take_picture(image_path):
+def take_picture():
     my_stream = BytesIO()
     
     camera = PiCamera()
@@ -14,3 +14,4 @@ def take_picture(image_path):
     sleep(1)
     camera.capture(my_stream, 'jpeg')
     camera.stop_preview()
+    return my_stream
