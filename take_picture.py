@@ -6,7 +6,6 @@ from time import sleep
 # takes a picture
 def take_picture():
     my_stream = BytesIO()
-    
     camera = PiCamera()
     camera.resolution = (1024, 768)
     camera.start_preview()

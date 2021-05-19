@@ -22,7 +22,7 @@ def get_plate_number():
     #     image_path = "/home/pi/Desktop/image.jpg"
         
     # take a picture
-    my_stream = take_picture.take_picture()
+    my_stream = take_picture()
     
     # Read the image into a byte array
     # image_data = open(image_path, "rb").read()
