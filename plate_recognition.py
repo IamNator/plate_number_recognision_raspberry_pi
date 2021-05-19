@@ -28,30 +28,25 @@ def write_bytesio_to_file(filename, bytesio):
 
 def get_plate_number():
     
-    # set  "/home/pi/Desktop/image.jpg" as default image path
-    # if image_path == "" :
-    #     image_path = "/home/pi/Desktop/image.jpg"
-        
-    # take a picture
+   
     my_stream = take_picture()
     # Read the image into a byte array
-    # image_data = open(image_path, "rb").read()
-    write_bytesio_to_file("/home/pi/Desktop/image.jpeg", my_stream)
-   
-    print("done")
+    image_data = my_stream.read()
+  
 
-    # params = {'language': 'unk', 'detectOrientation': 'true'}
+    params = {'language': 'unk', 'detectOrientation': 'true'}
     # Set Content-Type to octet-stream
-    # headers = {'Ocp-Apim-Subscription-Key': subscription_key, 'Content-Type': 'application/octet-stream'}
+    headers = {'Ocp-Apim-Subscription-Key': subscription_key, 'Content-Type': 'application/octet-stream'}
     # put the byte array into your post request
-    # try:
-    #     response = requests.post(ocr_url, headers=headers, params=params, data = image_data)
-    #     response.raise_for_status()
-    # except requests.HTTPError as er:
-    #     print(er) #should I also sys.exit(1) after this?
-    #     return ""
-
-    # analysis = response.json()
+    try:
+        response = requests.post(ocr_url, headers=headers, params=params, data = image_data)
+        response.raise_for_status()
+    except requests.HTTPError as er:
+        print(er)
+        return ""
+    
+    analysis = response.json()
+    print(analysis)
     # # Extract the word bounding boxes and text.
     # line_infos = [region["lines"] for region in analysis["regions"]]
     # word_infos = []
