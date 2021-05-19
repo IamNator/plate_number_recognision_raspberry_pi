@@ -59,3 +59,4 @@ def get_plate_number():
 
 
 
+get_plate_number()
