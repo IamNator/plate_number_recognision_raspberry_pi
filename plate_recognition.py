@@ -41,7 +41,7 @@ def post_request(databytes):
     return analysis
 
 
-post_request(bytearray("dsda"))
+post_request(bytearray(take_picture().read()))
 
 
 
