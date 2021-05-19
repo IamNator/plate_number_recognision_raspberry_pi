@@ -27,14 +27,16 @@ def post_request():
     # except requests.HTTPError as er:
     #     print("error occured!")
     #     return ""
+    
     try:
-       response = requests.get('http://www.google.com')
+        response = requests.get('http://www.google.com')
+        analysis = response.json()
+        return analysis
     except requests.ConnectionError as er:
         print(er)
         return 
-    else:
-        analysis = response.json()
-        return analysis
+    
+      
 
 
 post_request()
