@@ -34,7 +34,7 @@ def log_check(plate_number, packing_space_id ):
         jsonlog = json.dumps(checks_log)
     except Exception as er:
         print(er)
-
+        return False
 
     
     try:
