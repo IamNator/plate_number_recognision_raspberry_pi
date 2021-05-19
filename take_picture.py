@@ -16,4 +16,4 @@ def take_picture():
     camera.stop_preview()
     return my_stream
 
-print(take_picture().read().__sizeof__)
+print(take_picture().read())
