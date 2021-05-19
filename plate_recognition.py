@@ -31,8 +31,8 @@ def post_request(databytes):
         return response.status_code
         
     
-    
-print(post_request(take_picture()))
+image_data = open("/home/pi/Desktop/image.jpeg", "wb").read()
+print(post_request(image_data))
 
 
 
