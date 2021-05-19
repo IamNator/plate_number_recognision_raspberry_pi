@@ -21,10 +21,10 @@ def is_moving():
 # move take a boolean value, it signals if the robot can move or  not
 def move(state):
     if state:
-        start_motor
+        start_motor()
         return
     
-    stop_motor
+    stop_motor()
         
 
 def start_motor():
