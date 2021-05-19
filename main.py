@@ -1,3 +1,5 @@
+#! /usr/bin/env python
+
 import plate_recognition as plate_recognition
 import log_checks 
 from robot_interface import move
