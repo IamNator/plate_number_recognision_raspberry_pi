@@ -14,4 +14,6 @@ def take_picture():
     camera.capture(my_stream, 'jpeg')
     # camera.capture("/home/pi/Desktop/image.jpeg")
     camera.stop_preview()
-    return my_stream
+    # read stream to a byte array
+    databytes = my_stream.read()
+    return databytes
