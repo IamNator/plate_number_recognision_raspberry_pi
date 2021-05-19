@@ -32,9 +32,9 @@ def post_request():
     except requests.ConnectionError as er:
         print(er)
         return 
-    else:
-        analysis = response.json()
-        return analysis
+    # else:
+    #     analysis = response.json()
+    #     return analysis
 
 
 post_request()
