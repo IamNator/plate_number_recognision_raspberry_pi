@@ -10,7 +10,7 @@ from log_checks import log_check
 from take_picture import take_picture
 
         
-def post_request(databytes):
+def post_request():
         
     # # Add your Computer Vision subscription key and endpoint to your environment variables.
     # subscription_key = CONFIG['COMPUTER_VISION_SUBSCRIPTION_KEY']
@@ -36,7 +36,7 @@ def post_request(databytes):
     return analysis
 
 
-post_request(bytearray(take_picture().read()))
+post_request()
 
 
 
