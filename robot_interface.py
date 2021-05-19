@@ -1,8 +1,8 @@
 import RPi.GPIO as GPIO
 from datetime import time
 
-outputPIN = 3
-inputPIN = 5
+outputPIN = 23
+inputPIN = 24
 
 GPIO.setmode(GPIO.BCM)
 GPIO.setup(outputPIN, GPIO.OUT)
