@@ -5,6 +5,7 @@ outputPIN = 16 #GPIO 23
 inputPIN = 18 #GPIO 24
 
 # GPIO.setwarnings(False)
+GPIO.cleanup()
 GPIO.setmode(GPIO.BOARD)
 GPIO.setup(outputPIN, GPIO.OUT)
 GPIO.setup(inputPIN, GPIO.IN)
@@ -33,5 +34,4 @@ def start_motor():
 def stop_motor():
     GPIO.output(outputPIN, GPIO.LOW)
       
-
 
