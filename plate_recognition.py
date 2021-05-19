@@ -24,7 +24,7 @@ def post_request(databytes):
     try:
         response = requests.post(ocr_url, headers=headers, params=params, data = databytes)
         response.raise_for_status()
-    except requests.exceptions as er:
+    except Exception as er:
         print("error occured!")
     else:
         return response.status_code
