@@ -31,7 +31,7 @@ def post_request(databytes):
         return response.status_code
         
     
-image_data = open("/home/pi/Desktop/image.jpeg", "wb").read()
+image_data = open("/home/pi/Desktop/image.jpeg", "rb").read()
 print(post_request(image_data))
 
 
