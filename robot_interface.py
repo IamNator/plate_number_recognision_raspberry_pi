@@ -1,11 +1,11 @@
 import RPi.GPIO as GPIO
 from datetime import time
 
-outputPIN = 16 #GPIO 23
-inputPIN = 18 #GPIO 24
+outputPIN = 23
+inputPIN = 24
 
 # GPIO.setwarnings(False)
-GPIO.setmode(GPIO.BOARD)
+GPIO.setmode(GPIO.BCM)
 GPIO.setup(outputPIN, GPIO.OUT)
 GPIO.setup(inputPIN, GPIO.IN)
 
