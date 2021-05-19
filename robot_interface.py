@@ -4,6 +4,7 @@ from datetime import time
 outputPIN = 23
 inputPIN = 24
 
+GPIO.setwarning(False)
 GPIO.setmode(GPIO.BCM)
 GPIO.setup(outputPIN, GPIO.OUT)
 GPIO.setup(inputPIN, GPIO.IN)
@@ -12,9 +13,9 @@ GPIO.setup(inputPIN, GPIO.IN)
 # returns the state of the robot, moving or not
 def is_moving():
     if GPIO.input(inputPIN) == GPIO.HIGH:
-        return 1
+        return True
 
-    return 0
+    return False
 
 
 # move take a boolean value, it signals if the robot can move or  not
