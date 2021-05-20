@@ -1,5 +1,4 @@
-#!bash
-# launcher.sh
+
 # navigate to project directory, pull from github and run project code
 cd /home/pi/Plate\ Recognition 
 git pull 
