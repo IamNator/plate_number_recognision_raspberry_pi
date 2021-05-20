@@ -35,4 +35,4 @@ while not is_moving():
                 if not is_log_uploaded:
                     continue #repeat the process
             move(True)
-            time.sleep(0.5)
+            time.sleep(0.1)
