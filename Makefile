@@ -4,7 +4,7 @@ test_launcher:
 
 set-launcher:
 	chmod 755 launcher.sh
-	sed 's/exit 0$ /\1 /' /etc/rc.local 
+	sed 's/exit 0$ //' /etc/rc.local 
 	cat launcher.s h >> /etc/rc.local
 
 check_camera:
