@@ -13,9 +13,12 @@ num_of_packing_spaces = CONFIG["NUMBER_OF_PACKING_SPACES"]
 print("starting ...\n")
 i = 0
 while True:
+    time.sleep(10)
     if not is_moving():
         print("plate recognition...\n")
         move(False)
+        time.sleep(10)
+        
         plate_number = ""
         try:
             plate_number = plate_recognition.get_plate_number(image_path)
@@ -34,3 +37,4 @@ while True:
                 if not is_log_uploaded:
                     continue #repeat the process
             move(True)
+            time.sleep(10)
