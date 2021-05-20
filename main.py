@@ -17,6 +17,7 @@ while True:
     if not is_moving():
         print("plate recognition...\n")
         move(False)
+        time.sleep(5)
         
         plate_number = ""
         try:
