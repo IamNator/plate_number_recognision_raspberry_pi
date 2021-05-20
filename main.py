@@ -13,7 +13,7 @@ num_of_packing_spaces = CONFIG["NUMBER_OF_PACKING_SPACES"]
 print("starting ...\n")
 i = 0
 while True:
-    time.sleep(10)
+    time.sleep(1)
     if not is_moving():
         print("plate recognition...\n")
         move(False)
