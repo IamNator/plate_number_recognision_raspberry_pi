@@ -13,7 +13,7 @@ num_of_packing_spaces = CONFIG["NUMBER_OF_PACKING_SPACES"]
 print("starting ...\n")
 i = 0
 while True:
-    time.sleep(1)
+    time.sleep(3)
     if not is_moving():
         print("plate recognition...\n")
         move(False)
@@ -36,4 +36,3 @@ while True:
                 if not is_log_uploaded:
                     continue #repeat the process
             move(True)
-            time.sleep(2)
