@@ -9,7 +9,6 @@ GPIO.setmode(GPIO.BOARD)
 GPIO.setup(outputPIN, GPIO.OUT)
 GPIO.setup(inputPIN, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
 
-
 # returns the state of the robot, moving or not
 def is_moving():
     if GPIO.input(inputPIN) == GPIO.HIGH:
@@ -17,13 +16,11 @@ def is_moving():
 
     return False
 
-
 # move take a boolean value, it signals if the robot can move or  not
 def move(state):
     if state:
         start_motor()
         return
-    
     stop_motor()
         
 
