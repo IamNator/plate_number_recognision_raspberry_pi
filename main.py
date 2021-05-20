@@ -16,7 +16,7 @@ while True:
     while not is_moving():
         print("plate recognition...\n")
         move(False)
-        time.sleep(0.1)
+        time.sleep(0.2)
         
         plate_number = ""
         try:
@@ -36,4 +36,4 @@ while True:
                 if not is_log_uploaded:
                     continue #repeat the process
             move(True)
-            time.sleep(0.1)
+            time.sleep(0.5)
