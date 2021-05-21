@@ -26,7 +26,7 @@ while True:
     while not isMove:
         # isMove = is_moving()
         move(False)
-        time.sleep(1)
+        time.sleep(2)
         
         print("\nplate recognition...")
        
