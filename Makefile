@@ -8,8 +8,8 @@ set-launcher:
 	sudo chmod 755 /usr/local/sbin/launcher.sh
 	sudo cp launcher.service /etc/systemd/system/launcher.service
 # sudo systemctl start mawaqif
-	sudo systemctl enable mawaqif
-	systemctl status mawaqif
+	sudo systemctl enable launcher
+	systemctl status launcher
 	
 
 

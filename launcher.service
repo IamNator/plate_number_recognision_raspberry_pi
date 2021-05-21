@@ -6,7 +6,7 @@ After=network.target
 
 [Service]
 ExecStart=/usr/local/sbin/launcher.sh
-ExecStop=pkill -9 mawaqif
+ExecStop=pkill -9 launcher
 User=pi
 StandardOutput=console
 
