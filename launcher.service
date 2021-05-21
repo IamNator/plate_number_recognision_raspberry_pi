@@ -1,0 +1,14 @@
+
+[Unit]
+Description=Mawaqif packing space management system
+Wants=network-online.target
+After=network.target
+
+[Service]
+ExecStart=/usr/local/sbin/launcher.sh
+ExecStop=pkill -9 mawaqif
+User=pi
+StandardOutput=console
+
+[Install]
+WantedBy=multi-user.target
