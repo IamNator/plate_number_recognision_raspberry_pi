@@ -6,8 +6,6 @@ After=network.target
 
 [Service]
 ExecStart=/usr/local/sbin/launcher.sh
-ExecStop=pkill -9 launcher
-User=pi
 
 [Install]
 WantedBy=multi-user.target
