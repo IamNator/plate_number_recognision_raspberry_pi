@@ -7,7 +7,7 @@ set-launcher:
 	sudo cp launcher.sh  /usr/local/sbin/launcher.sh
 	sudo chmod 755 /usr/local/sbin/launcher.sh
 	sudo cp launcher.service /etc/systemd/system/launcher.service
-	sudo systemctl start mawaqif
+# sudo systemctl start mawaqif
 	systemctl status mawaqif
 	sudo systemctl enable mawaqif
 
