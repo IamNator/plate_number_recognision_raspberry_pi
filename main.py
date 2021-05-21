@@ -38,4 +38,5 @@ while True:
                 if not is_log_uploaded:
                     continue #repeat the process
             move(True)
+            isMove = is_moving()
             time.sleep(1)
