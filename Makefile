@@ -4,8 +4,7 @@ test_launcher:
 
 set-launcher:
 	chmod 755 launcher.sh
-	sed -i 's/exit 0/\ /' /etc/rc.local
-	cat launcher.sh >> /etc/rc.local
+	mv launcher.sh >> /etc/init.d/.
 
 check_camera:
 	vcgencmd get_camera
