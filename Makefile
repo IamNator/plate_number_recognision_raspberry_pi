@@ -4,8 +4,9 @@ test_launcher:
 
 set-launcher:
 	chmod 755 launcher.sh
-	sudo cp launcher.sh  /etc/init.d/.
-	update-rc.d /etc/init.d/launcher.sh defaults
+	# sudo cp launcher.sh  /etc/init.d/.
+	# update-rc.d /etc/init.d/launcher.sh defaults
+	sudo cp launcher.sh  /etc/network/if-up.d/.
 
 check_camera:
 	vcgencmd get_camera
