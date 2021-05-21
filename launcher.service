@@ -5,7 +5,7 @@ Wants=network-online.target
 After=network.target
 
 [Service]
-ExecStart=/usr/local/sbin/launcher.sh
+ExecStart=/usr/local/sbin/launcher.sh 
 
 [Install]
 WantedBy=multi-user.target
