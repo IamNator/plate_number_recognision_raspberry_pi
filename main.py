@@ -5,16 +5,26 @@ import log_checks
 import time
 from robot_interface import move
 from robot_interface import is_moving
+import threading
 
 # for storing images temporary
 image_path = "/home/pi/Desktop/image.jpeg"
 num_of_packing_spaces = CONFIG["NUMBER_OF_PACKING_SPACES"]
+
+isMove = False
+
+def check_move():
+    isMove = is_moving()
+    
+t = threading.Timer(0.1, check_move)
+    
 
 print("starting ...\n")
 i = 0
 while True:
     isMove = is_moving()
     while not isMove:
+        # isMove = is_moving()
         move(False)
         time.sleep(1)
         
@@ -38,5 +48,4 @@ while True:
                 if not is_log_uploaded:
                     continue #repeat the process
             move(True)
-            isMove = is_moving()
             time.sleep(1)
