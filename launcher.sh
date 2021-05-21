@@ -4,4 +4,5 @@
 # 
 cd /home/pi/Plate\ Recognition 
 git pull 
+echo "starts " > /home/pi/Desktop/log.txt
 python3 main.py | >> /home/pi/Desktop/log.txt
