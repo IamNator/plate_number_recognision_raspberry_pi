@@ -10,7 +10,6 @@ set-launcher:
 # sudo systemctl start mawaqif
 	sudo systemctl enable launcher
 	systemctl status launcher
-	
 
 
 # sudo cp launcher.sh  /etc/init.d/.
