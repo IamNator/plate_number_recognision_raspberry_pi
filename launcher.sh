@@ -15,9 +15,9 @@
 #   start)
 #     log_begin_msg "Starting mawaqif"
 # # do something
-    cd /home/pi/Plate\ Recognition 
-    git pull 
-    python3 main.py | >> /home/pi/Desktop/log.txt &
+cd /home/pi/Plate\ Recognition 
+git pull 
+python3 main.py | >> /home/pi/Desktop/log.txt 
 #     log_end_msg $?
 #     exit 0
 #     ;;
