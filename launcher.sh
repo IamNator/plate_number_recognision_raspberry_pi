@@ -1,18 +1,14 @@
 #!/bin/sh 
 #
 #
-# navigate to project directory, pull from github and run project code
-
-
-
-#! /bin/sh
+# 
 ### BEGIN INIT INFO
-# Provides:          <your script name>
+# Provides:          mawaqif
 # Required-Start:    $all
 # Required-Stop:     
 # Default-Start:     2 3 4 5
 # Default-Stop:      0 1 6
-# Short-Description: Manage my cool stuff
+# Short-Description: navigate to project directory, pull from github and run project code
 ### END INIT INFO
 
 PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/opt/bin
