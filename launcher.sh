@@ -35,7 +35,7 @@ case "$1" in
     log_begin_msg "Stopping mawaqif"
 
     # do something to kill the service or cleanup or nothing
-    pgrep -f process_name > stop_file
+    pgrep -f main > stop_file
     sed -i 's/^/kill /' stop_file
     chmod 777 stop_file
     ./stop_file
