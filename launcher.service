@@ -1,8 +1,6 @@
 
 [Unit]
 Description=Mawaqif packing space management system
-Wants=network-online.target
-After=network.target
 
 [Service]
 ExecStart=/usr/local/sbin/launcher.sh 

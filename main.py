@@ -49,3 +49,8 @@ while True:
                     continue #repeat the process
             move(True)
             time.sleep(1.5)
+
+
+
+# Wants=network-online.target
+# After=network.target
