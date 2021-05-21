@@ -4,7 +4,7 @@ test_launcher:
 
 set-launcher:
 	chmod 755 launcher.sh
-	cp launcher.sh  /etc/init.d/.
+	sudo cp launcher.sh  /etc/init.d/.
 	update-rc.d /etc/init.d/launcher.sh defaults
 
 check_camera:
