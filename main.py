@@ -28,7 +28,7 @@ while True:
         move(False)
         time.sleep(1)
         
-        print("plate recognition...\n")
+        print("\nplate recognition...")
        
         plate_number = ""
         try:
