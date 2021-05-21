@@ -48,4 +48,4 @@ while True:
                 if not is_log_uploaded:
                     continue #repeat the process
             move(True)
-            time.sleep(1)
+            time.sleep(1.5)
