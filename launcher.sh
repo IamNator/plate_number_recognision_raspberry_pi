@@ -2,5 +2,5 @@
 #
 #
 cd /home/pi/Plate\ Recognition 
-git pull
-# python3 main.py
+/bin/git pull
+/bin/python3 main.py
