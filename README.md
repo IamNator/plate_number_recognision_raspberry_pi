@@ -1,5 +1,5 @@
 # plate_number_recognision_raspberry_pi
-This software tracks cars in a parking lot. This makes detection of defaulter (illegal parking) easy.  
+This software tracks cars in a parking lot. This makes detection of defaulters (illegal parking) easy.  
 
 # how?
 This software runs on a raspberry pi, it detects a car plates number using a pi camera and sends it to a backend server. This is part of a larger system.
