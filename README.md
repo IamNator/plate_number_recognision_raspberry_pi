@@ -23,7 +23,8 @@ Below is a pseudo code of what happens
   config.py  
   robot_interface.py  
   plate_recognition.py  
-  take_picture.py  
+  take_picture.py
+  main.py*
   
 ## config.py  
 Contains key value pairs (dictionary) like the subscription key to access Azure congitive vision endpoint and a few endpoints that can change.  
