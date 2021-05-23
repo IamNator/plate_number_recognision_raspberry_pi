@@ -26,7 +26,7 @@ Below is a pseudo code of what happens
   take_picture.py  
   
 ## config.py  
-Contains configuration values like the subscription key to access Azure congitive vision endpoint and a few endpoints that can change.  
+Contains key value pairs (dictionary) like the subscription key to access Azure congitive vision endpoint and a few endpoints that can change.  
 It also has the number of expected parking lot
 
 ```
