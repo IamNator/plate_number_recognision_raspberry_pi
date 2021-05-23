@@ -7,7 +7,7 @@ This software runs on a raspberry pi, it detects a car plates number using a pi 
 # details
 It all starts in the main.py
 
-upon a reception of a signal, the pi sends another signal to signal it's busy (stopping the robot) then takes a picture of a car showing the plate number, the plate number is uploaded to Azure Cognitive Vision API to extract the plate number, the extracted plate number (if any) is sent to a backend server with the packing lot id and current time. At the end of this event, the pi sends another signal to tell the rest of the system it's no longer busy.
+upon a reception of a signal (to take a picture), the pi sends another signal to indicate it's busy (stopping the robot) then takes a picture of a car showing the plate number, the plate number is uploaded to Azure Cognitive Vision API to extract the plate number, the extracted plate number (if any) is sent to a backend server with the packing spot/space id and current time. At the end of this event, the pi sends another signal to tell the rest of the system it's no longer busy (move the robot the next car).
 
 Below is a pseudo code of what happens
 ```
