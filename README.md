@@ -23,7 +23,7 @@ Below is a pseudo code of what happens
   config.py  
   robot_interface.py  
   plate_recognition.py  
-  take_picture.py
+  take_picture.py  
   main.py*
   
 ## config.py  
